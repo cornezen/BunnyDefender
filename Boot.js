@@ -19,12 +19,11 @@ BunnyDefender.Boot.prototype = {
 		this.scale.pageAlignVertically = true;
 		this.stage.forcePortrait = true;  // force portrait mode
 		this.scale.setScreenSize(true);  // true will force screen resize no matter what
-
-        //this.input.addPointer();
-        this.touch = new Phaser.Touch(this.game);
-        
+		
+		this.input.addPointer();
         this.stage.backgroundColor = '#171642';
-        this.state.start('Preloader');
+		
+		this.state.start('Preloader');
 	}
 	
 };
