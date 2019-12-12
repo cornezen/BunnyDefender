@@ -5,11 +5,11 @@ BunnyDefender.StartMenu = function(game) {
 };
 
 BunnyDefender.StartMenu.prototype = {
-	
+
 	create: function () {
-        this.ding = this.add.audio('select_audio');
+    this.ding = this.add.audio('select_audio');
 		startBG = this.add.image(0, 0, 'titlescreen');
-        startBG.inputEnabled = true;
+    startBG.inputEnabled = true;
 		startBG.events.onInputDown.addOnce(this.startGame, this);
 
 		startPrompt = this.add.bitmapText(this.world.centerX-155, this.world.centerY+180, 'eightbitwonder', 'Touch to Start!', 24);
@@ -21,7 +21,16 @@ BunnyDefender.StartMenu.prototype = {
 	},
 
 	startGame: function (pointer) {
-        this.ding.play();
+    this.ding.play();
 		this.state.start('Game');
 	}
 };
+
+//example
+var theElement = document.getElementById("StartMenu");
+theElement.addEventListener("touchstart", handlerFunction, false);
+
+function handlerFunction(event) {
+	BunnyDefender.StartMenu.startGame;
+	//alert();
+}
